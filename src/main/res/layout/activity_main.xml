@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_gchat_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e0e0e0"
+        app:layout_constraintBottom_toTopOf="@+id/layout_gchat_chatbox" />
+
+    <RelativeLayout
+        android:id="@+id/layout_gchat_chatbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <EditText
+            android:layout_marginStart="16dp"
+            android:id="@+id/et_chat_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/btn_chat_send"
+            android:background="@android:color/transparent"
+            android:hint="Enter Message"
+            android:inputType="text"
+            android:maxLines="6"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/btn_chat_send"
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:background="?attr/selectableItemBackground"
+            android:text="@string/send"
+            android:textColor="@color/design_default_color_primary" />
+
+    </RelativeLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="186dp"
+        android:layout_height="50dp"
+        android:text="Request Location"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="539dp" />
+
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Location"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:text="@string/coordinates"
+            android:textSize="15sp" />
+    </ScrollView>
+
+        <Button
+            android:id="@+id/Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/request_lcation" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:accessibilityLiveRegion="none"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="GeoBat Meshnet" />
+
+        <Button
+            android:id="@+id/sos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="-412dp"
+            android:layout_toEndOf="@id/Location"
+            android:text="@string/sos" />
+
+    </RelativeLayout>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="-9dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" GeoBat Meshnet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.611"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.091" />
+
+    <TextView
+        android:id="@+id/Location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/your_loc"/>
+
+    <Button
+        android:id="@+id/getPos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sos"
+        app:layout_constraintTop_toBottomOf="@id/btn_chat_send"
+        app:layout_constraintRight_toLeftOf="@id/view"
+        tools:layout_editor_absoluteX="53dp"
+        tools:layout_editor_absoluteY="207dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_send"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="438dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_list"
+        android:layout_width="409dp"
+        android:layout_height="match_parent"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/text_gchat_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/Location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e0e0e0"
+        app:layout_constraintBottom_toTopOf="@+id/layout_gchat_chatbox"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/layout_gchat_chatbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <EditText
+            android:id="@+id/et_chat_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="0dp"
+            android:layout_toStartOf="@+id/btn_chat_send"
+            android:background="@android:color/transparent"
+            android:hint="Enter Message"
+            android:inputType="text"
+            android:maxLines="6"
+            tools:ignore="Autofill" />
+
+           <EditText
+               android:id= "@+id/edittextNumber1"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="4dp"
+               android:layout_marginEnd="0dp"
+               android:inputType="number"
+               android:text="Enter the number"
+               />
+
+        <Button
+            android:id="@+id/btn_chat_send"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_width="64dp"
+            android:layout_height="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="2dp"
+            android:background="?attr/shapeAppearanceMediumComponent"
+            android:text="Send"
+            android:textColor="@color/design_default_color_background" />
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="186dp"
+        android:layout_height="50dp"
+        android:text="Request Location"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="539dp" />
+
+    <ScrollView
+        android:layout_width="402dp"
+        android:layout_height="330dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:layout_editor_absoluteX="2dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:text="Coordinates: "
+            android:textSize="15sp" />
+    </ScrollView>
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="-9dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->
